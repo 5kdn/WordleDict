@@ -1,0 +1,27 @@
+@import "_global_env.scss";
+
+header{
+    height: $header_height;
+    width: 100vw;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    color:#000;
+    border-bottom: solid 1px $col_norm_line;
+
+    h1{
+        display: block;
+        font-family: $font_title;
+        font-weight: 700;
+        font-size: 37px;
+        line-height: 100%;
+        letter-spacing: 0.01em;
+        text-align: center;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+    }
+}

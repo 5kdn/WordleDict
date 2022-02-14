@@ -1,0 +1,43 @@
+@use "sass:math";
+
+$chr_size : 22pt;
+$col_correct:#6aaa64; // 完全一致の
+$col_present:#b59f3b; // 場所違いの背景
+$col_absent: #787c7e; // ハズレの背景
+$col_norm_line: #d3d6da; // 未入力状態のライン色
+$col_confirmed_line:#878a8c;
+
+$header_height:50px;
+
+$font_title: "Cambria", "Arial", "MS Pゴシック";
+$font_body: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+
+
+$cell_size: 62px;
+$cell_gap:5px;
+
+$mob_cell_size: 42px;
+
+$game_width: $cell_size * 6 + $cell_gap * 5;
+$game_height: $cell_size * 7 + $cell_gap * 6;
+
+$graph_width: calc(100vw - $game_height);
+$max_graph_width: 600px;
+$graph_height: $game_height;
+
+$container_width: calc($game_width + $graph_width + 2 * 10px);
+$base_width: $game_width + $max_graph_width;
+$breakpoint : (
+mobile : 480px,
+tablet : 768px,
+desktop : $container_width,
+);
+
+@mixin query($display){
+    @each $key, $value in $breakpoint{
+        //  defining max-width
+        @if ($display == $key){
+            @media (max-width: $value){@content;}
+        }
+    }
+}
