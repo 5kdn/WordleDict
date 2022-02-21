@@ -2,10 +2,11 @@
 
 import { defineComponent, PropType , Ref, ref} from 'vue'
 import { Responsive, Chart, Grid, Bar, Tooltip } from 'vue3-charts'
+import Labels from './GraphLabelsLayer.vue'
 
 
 export default defineComponent({
-    components: { Responsive, Chart, Grid, Bar, Tooltip },
+    components: { Responsive, Chart, Grid, Bar, Tooltip, Labels },
     setup(){
         const data: Ref<{ letter: string; count: number }[]> = ref([])
         const axis = {

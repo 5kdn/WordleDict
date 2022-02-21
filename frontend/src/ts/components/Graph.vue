@@ -13,6 +13,7 @@
                 template(#layers)
                     Grid(strokeDasharray="2,2")
                     Bar(:dataKeys="['letter', 'count']" :barStyle="{ fill: '#90e0ef' }")
+                    Labels(:dataKeys="['letter', 'count']")
                 template(#widgets)
                     Tooltip(borderColor='#000' :config="{letter:{color:'#000'}}")
 </template>
