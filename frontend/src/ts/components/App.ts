@@ -4,6 +4,7 @@ import { defineComponent, ref, Ref } from 'vue'
 import axios from 'axios'
 import Game from './Game.vue'
 import Graph from './Graph.vue'
+import Result from './Result.vue'
 import { WordList } from './WordList'
 
 
@@ -34,6 +35,7 @@ export default defineComponent({
     components: {
         Game,
         Graph,
+        Result,
     },
     methods: {
         wlchanged: async function () {

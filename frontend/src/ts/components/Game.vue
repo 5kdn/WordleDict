@@ -17,7 +17,7 @@
             maxlength="5"
             minlength="5"
             pattern="[a-z]{5}"
-            autofocus
+            rewuired autofocus
             )
         button(type="submit")
 </template>
