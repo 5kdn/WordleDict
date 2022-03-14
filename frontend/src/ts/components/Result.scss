@@ -1,0 +1,30 @@
+@import '../../scss/_global_env.scss';
+
+#result {
+    width: 100%;
+    max-width: $base_width;
+    margin: 0 auto;
+    @include query(mobile){
+        width: 90vw;
+    }
+
+    & > p {
+        font-size: 1.7em;
+        margin-bottom: 0.5em;
+    }
+
+    ul {
+        list-style-type: none;
+        font: 1.5em $font_body;
+        padding: 0;
+    }
+    li {
+        position: relative;
+        line-height: 30px;
+        margin: 7px 0 10px 40px;
+        padding-left:10px;
+        font-weight: bold;
+        border-bottom:solid 1px #aaa;
+    }
+
+}

@@ -1,0 +1,30 @@
+@use "sass:math";
+
+@import "_global_env.scss";
+@import "_header.scss";
+
+
+#container {
+    margin: 0 auto;
+    width: 100vw;
+    max-width: $container_width;
+    @include query(mobile){
+        width: 90vw;
+    }
+
+    #upper {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        max-width: $base_width;
+        user-select: none;
+        @include query(mobile){
+            flex-direction: column;
+        }
+    }
+    #lower{
+        @include query(mobile){
+            width: 90vw;
+        }
+    }
+}

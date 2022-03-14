@@ -1,0 +1,166 @@
+@use "sass:math";
+@import "../../scss/_global_env.scss";
+
+#game{
+    width: $game_width;
+    height: $game_height;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: $cell_gap;
+
+    @include query(tablet) {
+        width: calc($mob_cell_size * 6 + $cell_gap * 5);
+        height: auto;
+    }
+    @include query(mobile) {
+        margin-left: auto;
+        margin-right: auto;
+        width: calc($mob_cell_size * 6 + $cell_gap * 5);
+        height: auto;
+    }
+
+
+    .word-box {
+        width: 100%;
+        height: $cell_size;
+        display: flex;
+        flex-direction: row;
+        gap: $cell_gap;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: stretch;
+        @include query(mobile) {
+            height: $mob_cell_size;
+        }
+        @include query(tablet) {
+            height: $mob_cell_size;
+        }
+
+        .char-box {
+            cursor: pointer;
+            align-items: center;
+            background: #FFF;   // TODO:.chrと.del_btnに割り当てたほうが良い？
+            border: solid 2px $col_norm_line;
+            box-sizing: border-box;
+            color: #000;
+            display: inline-flex;
+            font-family: $font_body;
+            font-size: $chr_size;
+            font-weight: 700;
+            justify-content: center;
+            line-height: $chr_size;
+            text-transform: uppercase;
+            vertical-align: middle;
+            width: $cell_size;
+            height: $cell_size;
+            @include query(tablet) {
+                width: $mob_cell_size;
+                height: $mob_cell_size;
+            }
+            @include query(mobile) {
+                width: $mob_cell_size;
+                height: $mob_cell_size;
+            }
+
+            &.absent{
+                border-color: $col_absent;
+                background: $col_absent;
+                color: #FFF;
+            }
+            &.correct{
+                border-color: $col_correct;
+                background: $col_correct;
+                color: #FFF;
+            }
+            &.present{
+                border-color: $col_present;
+                background: $col_present;
+                color: #FFF;
+            }
+            &.del_btn{
+                border: none;
+                background: #FFF;
+                color:$col_absent;
+                border-radius: 50%;
+            }
+        } // .char-box
+    } // .word-box
+
+    input[type='text'] {
+        background: #FFF;
+        display: box;
+        width: $cell_size * 5 + $cell_gap * 4 ;
+        height: $cell_size;
+        margin: 0 auto;
+        position: relative;
+        font: 28pt $font_body;
+        color: #000;
+        transition: 0.1s;
+        box-sizing: border-box;
+        border: 1px solid #1b2538;
+        text-align: center;
+        font-feature-settings: "tnum";
+
+        @include query(tablet) {
+            height: $mob_cell_size;
+            width: calc($mob_cell_size * 5 + $cell_gap * 4);
+        }
+        @include query(mobile) {
+            height: $mob_cell_size;
+            width: calc($mob_cell_size * 5 + $cell_gap * 4);
+        }
+
+        &:focus {
+            border: 1px solid #000;
+            outline: none;
+            box-shadow: 0 0 5px 1px rgba(0,0,0, .5);
+        }
+    } // input[type='text']
+    button[type='submit'] {
+        width: $cell_size;
+        height: $cell_size;
+        margin-left: $cell_gap;
+        background: $col_absent;
+        font-size: 14pt;
+        font-weight: 700;
+        line-height: 1.5;
+        position: relative;
+        display: inline-block;
+        transition: all 0.3s;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        overflow: hidden;
+        color: #fff;
+        transition: background 0.1s;
+
+        @include query(tablet) {
+            height: $mob_cell_size;
+            width: $mob_cell_size;
+        }
+        @include query(mobile) {
+            height: $mob_cell_size;
+            width: $mob_cell_size;
+        }
+
+        &::before {
+            content: "";
+            margin: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 10px;
+            width: 26px;
+            height: 26px;
+            border-top: 10px solid #fff;
+            border-right: 10px solid #fff;
+            transform: rotate(45deg);
+        }
+        &:hover,
+        &:focus {
+            background: $col_correct;
+        }
+    } // button[type='submit']
+} // #input-words-box

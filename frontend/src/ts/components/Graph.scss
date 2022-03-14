@@ -1,0 +1,24 @@
+@use "sass:math";
+
+@import '../../scss/_global_env.scss';
+
+#graph {
+    width: $graph_width;
+    max-width: $max_graph_width;
+    height: $graph_height;
+    margin: 10px;
+    @include query(tablet){
+        width: calc(100vw - ($mob_cell_size * 6 + $cell_gap * 5 + 20px * 2));
+        height: $mob_cell_size * 7 + $cell_gap * 6 + 20px;
+    }
+    @include query(mobile){
+        width: 90vw;
+        height: calc(100vh - ($mob_cell_size * 7 + $cell_gap * 6 + 20px + 50px));
+        max-height: 280px;
+        margin: 10px 0;
+    }
+
+    .w-full {
+        height: 100%;
+    }
+}
