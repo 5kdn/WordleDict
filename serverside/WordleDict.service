@@ -1,0 +1,22 @@
+[Unit]
+Description = Wordle Dictionary Docker
+After       = nginx.service
+Wants       = nginx.service
+Requires    = docker.service
+
+[Service]
+Type        = simple
+User        = root
+Group       = root
+
+
+WorkingDirectory  = /var/www/WordleDict
+Environment = COMPOSE_FILE = ${WorkingDirectory}/serverside/docker-compose.yml
+
+ExecStartPre= -/usr/local/bin/docker-compose -f ${COMPOSE_FILE} down --volumes
+ExecStart   = /usr/local/bin/docker-compose -f ${COMPOSE_FILE} up
+ExecStop    = /usr/local/bin/docker-compose -f ${COMPOSE_FILE} down --volumes
+Restart     = always
+
+[Install]
+WantedBy    = multi-user.target
