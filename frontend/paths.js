@@ -1,5 +1,5 @@
 path = require('path');
-const dest_root = path.resolve(__dirname, '../serverside/app/templates')
+const dest_root = path.resolve(__dirname, '../serverside/app/app/templates')
 
 module.exports = {
     html: {

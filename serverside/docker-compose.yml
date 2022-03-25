@@ -1,0 +1,7 @@
+version: '2.3'
+services:
+  app:
+    build: './app'
+    volumes:
+      - ./app/app/:/var/www/app
+      - ./tmp:/tmp/wordle
