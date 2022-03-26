@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
-## [1.0.0]
+## [v1.0.0]
 
 - initial release
 
@@ -14,4 +14,4 @@ and this project adheres to [Semantic Versioning].
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 
 <!-- Versions -->
-[1.0.0]: https://github.com/5kdn/WordleDict/compare/master...release/1.0.0
+[v1.0.0]: https://github.com/5kdn/WordleDict/releases/tag/v1.0.0

@@ -8,12 +8,31 @@
   </head>
   <body>
     <header>
-      <div class="dummy"></div>
+      <div class="dummy show-help-btn">
+        <div id="show-help-btn__inner">?</div>
+      </div>
       <h1>Wordle Dict</h1>
       <div class="dummy"></div>
     </header>
     <div id="container">
       <App></App>
+    </div>
+    <div id="popup">
+      <div class="popup-inner" id="popup-help">
+        <div class="popup-close-btn">✖</div>
+        <div class="popup-body">
+          <h2 class="title">HOW TO USE</h2>
+          <p><strong>Wordle</strong>の解答の推測を助けます。</p>
+          <p>入力フォームにWordleに入力した単語を入れます。送信するには、送信ボタンかエンターキーを押してください。</p>
+          <p>タイルをクリックしてWordleの表示色と合わると、条件に一致する単語が表示されます。</p>
+          <div id="popup-help-example">
+            <p><strong>Example</strong></p>
+            <div id="popup-help-example-imagewrapper"></div>
+          </div>
+          <p><strong>enjoy Wordle life every day!</strong></p>
+        </div>
+      </div>
+      <div id="popup-bg"></div>
     </div>
     <script src="./js/main.bundle.js"></script>
   </body>
