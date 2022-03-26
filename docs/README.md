@@ -5,6 +5,7 @@
 ## Overview
 
 Dictionary web service to solve Wordle.
+[sample page](https://5kdn.red/wordle/)
 
 ## Requirement
 
