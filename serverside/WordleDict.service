@@ -10,9 +10,11 @@ Type        = simple
 User        = root
 Group       = root
 
-ExecStart   = /usr/local/bin/docker-compose -f /var/www/WordleDict/serverside/docker-compose.yml -p WordleDict up
-ExecStop    = /usr/local/bin/docker-compose -f /var/www/WordleDict/serverside/docker-compose.yml -p WordleDict down
-ExecReload  = /usr/local/bin/docker-compose -f /var/www/WordleDict/serverside/docker-compose.yml -p WordleDict restart
+Environment = COMPOSE_FILE=/var/www/WordleDict/serverside/docker-compose.yml
+
+ExecStartPre=-/usr/local/bin/docker-compose -f ${COMPOSE_FILE} down --volumes
+ExecStart   = /usr/local/bin/docker-compose -f ${COMPOSE_FILE} -p wordle-dict up
+ExecStop    = /usr/local/bin/docker-compose -f ${COMPOSE_FILE} down --vokumes
 Restart     = always
 RestartSec  = 10
 
